@@ -13,10 +13,9 @@ class PostController extends ChangeNotifier {
   Future<void> fetchPosts() async {
     try {
       posts = await apiService.getPosts();
-      // Check if posts are fetched
+
       log("Fetched ${posts.length} posts");
     } catch (e) {
-      // Handle errors
       log("Error fetching posts: $e");
     }
     notifyListeners();
